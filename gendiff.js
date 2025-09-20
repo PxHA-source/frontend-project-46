@@ -17,10 +17,10 @@ program
         filepath2 = path.resolve(process.cwd(), filepath2)
         readFileSync(filepath1)
         readFileSync(filepath2)
+        console.log(filepath1)
+        console.log(filepath2)
     })
 
 program.parse();
 
-// относительный путь
-// зафиксировать пути сначала path.resolve и process.cwd и скормить корректный путь readfileSync 
 // надо понять как парсить разные расширения и парсить их в объект
