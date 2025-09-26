@@ -18,7 +18,7 @@ program
         const absolutePath2 = path.resolve(process.cwd(), filepath2);
         const parseIng1 = parse(absolutePath1)
         const parseIng2 = parse(absolutePath2)
-        console.log(compare(parseIng1, parseIng2))
+        console.log(compare(parseIng1, parseIng2));
     })
 
 program.parse();
