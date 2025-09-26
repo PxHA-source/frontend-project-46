@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import { readFileSync } from 'node:fs';
 import path from 'node:path';
+import { parse } from './parseFile.js';
+import { compare } from './compare.js';
 
 const program = new Command();
 
@@ -13,14 +14,11 @@ program
     .argument('<filepath1>', 'первый путь до файла')
     .argument('<filepath2>', 'второй путь до файла')
     .action((filepath1, filepath2) => {
-        filepath1 = path.resolve(process.cwd(), filepath1)
-        filepath2 = path.resolve(process.cwd(), filepath2)
-        readFileSync(filepath1)
-        readFileSync(filepath2)
-        console.log(filepath1)
-        console.log(filepath2)
+        const absolutePath1 = path.resolve(process.cwd(), filepath1);
+        const absolutePath2 = path.resolve(process.cwd(), filepath2);
+        const parseIng1 = parse(absolutePath1)
+        const parseIng2 = parse(absolutePath2)
+        console.log(compare(parseIng1, parseIng2))
     })
 
 program.parse();
-
-// надо понять как парсить разные расширения и парсить их в объект
