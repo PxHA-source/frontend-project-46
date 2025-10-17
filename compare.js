@@ -1,5 +1,6 @@
 import _ from 'lodash';
 
+
 export const compare = (data1, data2) => {
   let str = '';
   const keys = _.sortedUniq(Object.keys(data1).concat(Object.keys(data2)).sort());
