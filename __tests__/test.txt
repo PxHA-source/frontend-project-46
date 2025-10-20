@@ -12,8 +12,8 @@ expect(gendiff(arg1.yml, arg2.yml)).toBe(
   + timeout: 20
   + verbose: true
 })
-expect(gendiff(arg1.yml)).toBe('ожидалось два файла')
-expect(gendiff(arg1.js, arg2.js)).toBe('ожидалось расширение yml или json')
+СДЕЛАЛ expect(gendiff(arg1.yml)).toBe('ожидалось два файла') 
+СДЕЛАЛ expect(gendiff(arg1.js, arg2.js)).toBe('ожидалось расширение yml или json') 
 expect(gendiff(arg1.json, arg2.yml)).toBe(
   {
   - follow: false
@@ -23,7 +23,7 @@ expect(gendiff(arg1.json, arg2.yml)).toBe(
   + timeout: 20
   + verbose: true
 } )
-expect(gendiff(arg1.json, arg2.json)).toBe(
+СДЕЛАЛ expect(gendiff(arg1.json, arg2.json)).toBe(  
   {
   - follow: false
     host: hexlet.io
