@@ -7,4 +7,6 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=PxHA-source_frontend-project-46&metric=coverage)](https://sonarcloud.io/summary/new_code?id=PxHA-source_frontend-project-46)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=PxHA-source_frontend-project-46&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=PxHA-source_frontend-project-46)
 
-https://asciinema.org/connect/169bd02e-3802-460d-94b0-4a4557a796b8 Различия 2-ух json-файлов
+Проект вычислитель отличий позволяет узнать разницу между 2 файлами расширения json или yaml || yml
+https://asciinema.org/connect/169bd02e-3802-460d-94b0-4a4557a796b8 Сравнения различий между 2-ух json-файлов
+https://asciinema.org/connect/169bd02e-3802-460d-94b0-4a4557a796b8 Сравнения различий между 2-ух yaml-файлов

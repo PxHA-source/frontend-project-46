@@ -30,7 +30,7 @@ test('compare two JSON fixture files', () => {
 test('compare partially modified objects', () => {
     const small1 = { a: 1, b: 2 };
     const small2 = { a: 1, b: 3 };
-const expected = `{
+    const expected = `{
     a: 1
   - b: 2
   + b: 3
@@ -56,4 +56,14 @@ test('compare with only one file (second is missing)', () => {
     expect(() => {
     compare(data1, data2);
   }).toThrow();
+})
+
+test('compate two Yaml fixture files', () => {
+  const file1PathYaml = path.join(__dirname, '../__fixtures__/file1.yaml');
+  const file2PathYaml = path.join(__dirname, '../__fixtures__/file2.yaml');
+
+  const data1 = parse(file1PathYaml);
+  const data2 = parse(file2PathYaml);
+  const result = compare(data1, data2); 
+  expect(result).toEqual(expectedFullCompare);
 })
