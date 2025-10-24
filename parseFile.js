@@ -8,7 +8,9 @@ export const parse = (filepath) => {
     const ext = path.extname(filepath).slice(1);
     if (ext === 'json') {
         return JSON.parse(date)
-    } else {
+    } else if (ext === 'yaml' || ext === 'yml') {
         return yaml.load(date);
+    } else {
+        return date;
     }
 }
