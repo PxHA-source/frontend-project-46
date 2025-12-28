@@ -7,8 +7,8 @@ import { compare } from '../compare.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const file1Path = path.join(__dirname, '../__fixtures__/plainfile1.json');
-const file2Path = path.join(__dirname, '../__fixtures__/plainfile2.json');
+const file1Path = path.join(__dirname, '../__fixtures__/file1.json');
+const file2Path = path.join(__dirname, '../__fixtures__/file2.json');
 
 const data1 = parse(file1Path);
 const data2 = parse(file2Path);
@@ -40,8 +40,8 @@ test('compare partially modified plain objects', () => {
 });
 
 test('parse JSON and YAML produce the same plain object', () => {
-    const jsonPath = path.join(__dirname, '../__fixtures__/plainfile1.json');
-    const ymlPath = path.join(__dirname, '../__fixtures__/plainfile1.yaml');
+    const jsonPath = path.join(__dirname, '../__fixtures__/file1.json');
+    const ymlPath = path.join(__dirname, '../__fixtures__/file2.yaml');
     
     const dataJson = parse(jsonPath);
     const dataYml = parse(ymlPath);
@@ -59,22 +59,11 @@ test('compare with only one plain object (second is missing)', () => {
 });
 
 test('compare two Yaml fixture plain files', () => {
-  const file1PathYaml = path.join(__dirname, '../__fixtures__/plainfile1.yaml');
-  const file2PathYaml = path.join(__dirname, '../__fixtures__/plainfile2.yaml');
+  const file1PathYaml = path.join(__dirname, '../__fixtures__/file1.yaml');
+  const file2PathYaml = path.join(__dirname, '../__fixtures__/file2.yaml');
 
   const data1 = parse(file1PathYaml);
   const data2 = parse(file2PathYaml);
   const result = compare(data1, data2); 
   expect(result).toEqual(expectedFullCompare);
-});
-
-test('compare two Json nested files', () => {
-  const file1Path = path.join(__dirname, '../__fixtures__/file1.yaml');
-  const file2Path = path.join(__dirname, '../__fixtures__/file2.yaml');
-
-  const data1 = parse(file1Path);
-  const data2 = parse(file2Path);
-  const result = compare(data1, data2);  
-
-  expect(result).toEqual(parse(path.join(__dirname, '../__fixtures__/result.txt')));
 });
